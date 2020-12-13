@@ -1,7 +1,8 @@
 class Tree{
     constructor(){
         var options={
-            isStatic:true
+            isStatic:true,
+            density:1
         };
 
         this.image=loadImage("sprites/tree.png");

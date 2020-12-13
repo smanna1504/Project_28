@@ -33,7 +33,7 @@ mango3=new Mango(1000,140);
 mango4=new Mango(900,230);
 mango5=new Mango(920,65);
 mango6=new Mango(1030,215);
-elastic=new Elastic(stone.body,{x:150,y:320});
+elastic=new Elastic(stone.body,{x:180,y:320});
 
 
 	Engine.run(engine);
