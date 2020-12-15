@@ -39,7 +39,7 @@ pop();
 }
 
 attach(body){
-    this.sling.bodyA=body;
+    this.elastic.bodyA=body;
 }
 
 }
