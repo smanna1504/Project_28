@@ -80,11 +80,16 @@ function keyPressed(){
   }
 }
 
-function detectCollision(lStone,lMango){
-  mangoPosition=lMango.body.position;
-  stonePosition=lStone.body.position;
-  var distance=dist(stonePosition.x,stonePosition.y,mangoPosition.x,mangoPosition.y);
-  if(distance<=lStone.radius+lMango.radius){
-    Matter.Body.setStatic(lMango,false);
+function detectollision(lstone,lmango){
+	
+  mangoBodyPosition=lmango.body.position
+  stoneBodyPosition=lstone.body.position
+  
+  var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
+  
+  	if(distance<=lmango.r+lstone.r)
+    {
+      //console.log(distance);
+  	  Matter.Body.setStatic(lmango.body,false);
+    }
   }
-}
