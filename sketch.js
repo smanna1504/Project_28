@@ -7,6 +7,7 @@ const Constraint=Matter.Constraint;
 
 var stone,backgroundImg,tree,boy,boyImg,mango1,mango2,mango3,mango4,mango5,mango6;
 var elastic;
+var ground;
 
 function preload()
 {
@@ -23,18 +24,20 @@ function setup() {
 
 	//Create the Bodies Here.
 tree=new Tree(1050,580);
-stone=new Stone();
+stone=new Stone(260,500,50);
 boy=createSprite(270,450,100,100);
 boy.addImage(boyImg);
 boy.scale=0.2;
-mango1=new Mango(1093,152);          
-mango2=new Mango(1085,100);
-mango3=new Mango(1000,140);
-mango4=new Mango(900,230);
-mango5=new Mango(950,80);
-mango6=new Mango(1030,215);
+mango1=new Mango(1093,152,50);          
+mango2=new Mango(1085,100,50);
+mango3=new Mango(1000,140,50);
+mango4=new Mango(900,230,50);
+mango5=new Mango(950,80,50);
+mango6=new Mango(1030,215,50);
 elastic=new Elastic(stone.body,{x:180,y:320});
-tree.debug=true;
+//tree.debug=true;
+ground=new Ground();
+//ground.visible=false;
 
 	Engine.run(engine);
   
@@ -54,6 +57,10 @@ function draw() {
   mango6.display();
   elastic.display();
   stone.display();
+  //ground.display();
+  stroke('black');
+  fill('black');
+text("PRESS SPACE TO GET A SECOND CHANCE TO PLAY",100,30);
 
   detectCollision(stone,mango1);
   detectCollision(stone,mango2);
@@ -80,7 +87,7 @@ function keyPressed(){
   }
 }
 
-function detectollision(lstone,lmango){
+function detectCollision(lstone,lmango){
 	
   mangoBodyPosition=lmango.body.position
   stoneBodyPosition=lstone.body.position
